@@ -1,0 +1,41 @@
+.wrap {
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+  padding-top: 60px;
+  -webkit-transition: padding-top 300ms ease-out;
+  -moz-transition: padding-top 300ms ease-out;
+  -o-transition: padding-top 300ms ease-out;
+  transition: padding-top 300ms ease-out;
+}
+.sidenav {
+  width: 300px;
+  display: inline-block;
+}
+.view {
+  display: inline-block;
+}
+
+.sidenav {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 60px;
+  z-index: 50;
+  background-color: #fff;
+}
+
+.view {
+  /* overflow-y: scroll; */
+  min-height: 100%;
+  width: 100%;
+  background-color: #f2f2f2;
+  height: auto;
+}
+.view.openSideNav {
+  margin-left: 300px;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}

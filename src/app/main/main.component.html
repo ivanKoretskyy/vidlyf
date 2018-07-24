@@ -1,0 +1,20 @@
+<div class="wrap">
+  <vidly-navigation>
+
+  </vidly-navigation>
+  <div *ngIf="openSideNav" class="sidenav">
+    <div>
+      <p>
+        side works!
+      </p>
+    </div>
+
+  </div>
+  <div [ngClass]="{'openSideNav': openSideNav}" class="view">
+    <p (click)="toggle()">
+      main works!awef awef awef awef awefawefawef awfe awfe awegf awegf awegawegawega
+    </p>
+  </div>
+
+
+</div>
