@@ -39,14 +39,14 @@ jobs:
       - run: yarn ng test --single-run
 
       - run:
-        command: |
+          command: |
           docker build -t vidlyf.azurecr.io/vidlyf:1.0 .
 
       - run:
-        command: |
+          command: |
           docker login --username $DOCKER_USER --password $DOCKER_PASS vidlyf.azurecr.io
       
       - run:
-        command: |
+          command: |
           docker push vidlyf.azurecr.io/vidlyf:1.0
 
