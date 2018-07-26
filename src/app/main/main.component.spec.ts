@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { MainComponent } from "./main.component";
 import { NavigationModule } from "./../navigation/navigation.module";
-
+import { Store, StoreModule } from "@ngrx/store";
 describe("MainComponent", () => {
   let component: MainComponent;
   let fixture: ComponentFixture<MainComponent>;
@@ -10,7 +10,14 @@ describe("MainComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [MainComponent],
-      imports: [NavigationModule]
+      imports: [
+        NavigationModule,
+        StoreModule.forRoot({}),
+        StoreModule.forFeature("navigation", (s, a) => s)
+      ],
+      providers: [
+        { provide: Store, useValue: { pipe: () => ({ subscribe: () => {} }) } }
+      ]
     }).compileComponents();
   }));
 

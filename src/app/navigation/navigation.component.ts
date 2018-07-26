@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Store } from "@ngrx/store";
 
 @Component({
   selector: "vidly-navigation",
@@ -7,11 +8,15 @@ import { Component, OnInit } from "@angular/core";
 })
 export class NavigationComponent implements OnInit {
   showDashboard = false;
-  constructor() {}
+  constructor(private store: Store<any>) {}
 
   ngOnInit() {}
 
   toggleProjects() {
     this.showDashboard = !this.showDashboard;
+    this.store.dispatch({
+      type: "TOGGLE_SIDENAV",
+      payload: this.showDashboard
+    });
   }
 }
