@@ -5,6 +5,7 @@
   position: relative;
   z-index: 0;
   padding-top: 60px;
+  font-family: cursive, sans-serif;
 }
 
 .view {
@@ -30,4 +31,48 @@
 }
 .view.openSideNav {
   padding-left: 300px;
+}
+
+#gnavi-links ul {
+  padding: 40px 20px;
+}
+
+.nav-links > ul {
+  width: 220px;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1;
+  position: relative;
+}
+
+#menu {
+  font-size: 1.6em;
+}
+
+#gnavi-links li {
+  margin-bottom: 20px;
+}
+
+li {
+  list-style-type: none;
+}
+
+#gnavi-links li a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 0 0 25px;
+  color: #1a1a1a;
+  font-family: cursive, sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.25em;
+  font-weight: bold;
+  font-size: 1.6em;
+}
+
+.hover-line-links a > span,
+a.hover-line > span {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
 }

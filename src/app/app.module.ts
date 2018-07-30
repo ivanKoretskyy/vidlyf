@@ -4,6 +4,7 @@ import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
 import { MainModule } from "./main/main.module";
 import { StoreModule } from "@ngrx/store";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [AppComponent],

@@ -23,8 +23,7 @@
   top: 0;
   margin-left: -140px;
   width: 280px;
-  font-family: "Calibre-Bold", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
-    "メイリオ", "Meiryo", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: cursive, sans-serif;
   font-weight: bold;
   letter-spacing: 0.5em;
 }
@@ -34,7 +33,7 @@
   height: 60px;
   line-height: 60px;
   color: #1a1a1a;
-  font-size: 1.7em;
+  font-size: 1.8em;
   padding: 0 20px;
 }
 
@@ -49,7 +48,7 @@ a.hover-line > span {
   height: 60px;
   line-height: 60px;
   color: #1a1a1a;
-  font-size: 1.7em;
+  font-size: 1.8em;
   padding: 0 20px;
 }
 
@@ -58,7 +57,7 @@ a.hover-line > span {
 }
 .nav {
   height: 60px;
-  font-size: 1.4em;
+  font-size: 1.6em;
 }
 .nav-btn {
   height: 60px;
@@ -72,8 +71,7 @@ a.hover-line > span {
 }
 
 .nav-btn a .label {
-  font-family: "Calibre-Bold", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
-    "メイリオ", "Meiryo", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: cursive, sans-serif;
   font-weight: bold;
   letter-spacing: 0.25em;
 }
@@ -85,7 +83,7 @@ a.hover-line > span {
 
 .nav {
   height: 60px;
-  font-size: 1.4em;
+  font-size: 1.6em;
 }
 .container:before,
 .container:after {
