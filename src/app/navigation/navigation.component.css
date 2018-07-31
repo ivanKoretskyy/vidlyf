@@ -23,7 +23,7 @@
   top: 0;
   margin-left: -140px;
   width: 280px;
-  font-family: cursive, sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   font-weight: bold;
   letter-spacing: 0.5em;
 }
@@ -33,7 +33,7 @@
   height: 60px;
   line-height: 60px;
   color: #1a1a1a;
-  font-size: 1.8em;
+  font-size: 1.4em;
   padding: 0 20px;
 }
 
@@ -66,12 +66,12 @@ a.hover-line > span {
 
 .nav-btn a {
   display: inline-block;
-  line-height: 60px;
+  line-height: 40px;
   color: #1a1a1a;
 }
 
 .nav-btn a .label {
-  font-family: cursive, sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   font-weight: bold;
   letter-spacing: 0.25em;
 }

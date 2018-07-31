@@ -5,7 +5,7 @@
   position: relative;
   z-index: 0;
   padding-top: 60px;
-  font-family: cursive, sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .view {
@@ -20,12 +20,13 @@
   background-color: #fff;
   width: 300px;
   display: inline-block;
+  border-right: 2px solid whitesmoke;
 }
 
 .view {
   min-height: 100%;
   width: 100%;
-  background-color: #f2f2f2;
+  background-color: #ffffff;
   height: auto;
   box-sizing: border-box;
 }
@@ -63,11 +64,11 @@ li {
   line-height: 40px;
   padding: 0 0 0 25px;
   color: #1a1a1a;
-  font-family: cursive, sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   font-weight: bold;
   letter-spacing: 0.25em;
   font-weight: bold;
-  font-size: 1.6em;
+  font-size: 1.2em;
 }
 
 .hover-line-links a > span,
@@ -75,4 +76,7 @@ a.hover-line > span {
   display: inline-block;
   position: relative;
   white-space: nowrap;
+}
+#gnavi-links li a.active {
+  color: tomato;
 }

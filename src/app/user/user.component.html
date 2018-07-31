@@ -1,38 +1,38 @@
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="profileForm" class="example-form" (ngSubmit)="onSubmit()">
 
-  <label>
-    First Name:
-    <input type="text" formControlName="firstName">
-  </label>
-
-  <label>
-    Last Name:
-    <input type="text" formControlName="lastName">
-  </label>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="First Name" type="text" formControlName="firstName" required>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="lastName Name" type="text" formControlName="lastName" required>
+  </mat-form-field>
 
   <div formGroupName="address">
-    <h3>Address</h3>
-
-    <label>
-      Street:
-      <input type="text" formControlName="street">
-    </label>
-
-    <label>
-      City:
-      <input type="text" formControlName="city">
-    </label>
-
-    <label>
-      State:
-      <input type="text" formControlName="state">
-    </label>
-
-    <label>
-      Zip Code:
-      <input type="text" formControlName="zip">
-    </label>
+    <p>Address</p>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Street" type="text" formControlName="street" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="City" type="text" formControlName="city" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="State" type="text" formControlName="state" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="zip" type="text" formControlName="zip" required>
+    </mat-form-field>
   </div>
-  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  <div formArrayName="phones">
+    <button mat-button (click)="addPhone()">Add phone</button>
+    <div *ngFor="let phone of phones.controls; let i=index">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="phone" type="text" [formControlName]="i" required>
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  <button mat-button (click)="updateProfile()">UpdateProfile</button>
 
 </form>
+<!-- <span> value: {{profileForm.value | json}}</span>
+<span> status: {{profileForm.status | json}}</span> -->
