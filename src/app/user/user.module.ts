@@ -3,7 +3,12 @@ import { CommonModule } from "@angular/common";
 import { UserComponent } from "./user.component";
 import { RouterModule, Routes } from "@angular/router";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
-import { MatButtonModule, MatInputModule } from "@angular/material";
+import {
+  MatButtonModule,
+  MatInputModule,
+  MatTableModule
+} from "@angular/material";
+import { UserListComponent } from "./user-list/user-list.component";
 //import { REACTIVE_FORM_DIRECTIVES } from "@angular/forms";
 @NgModule({
   imports: [
@@ -12,8 +17,12 @@ import { MatButtonModule, MatInputModule } from "@angular/material";
     ReactiveFormsModule,
     MatButtonModule,
     MatInputModule,
-    RouterModule.forChild([{ path: "", component: UserComponent }])
+    MatTableModule,
+    RouterModule.forChild([
+      { path: "register", component: UserComponent },
+      { path: "", component: UserListComponent }
+    ])
   ],
-  declarations: [UserComponent]
+  declarations: [UserComponent, UserListComponent]
 })
 export class UserModule {}

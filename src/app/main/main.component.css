@@ -77,6 +77,6 @@ a.hover-line > span {
   position: relative;
   white-space: nowrap;
 }
-#gnavi-links li a.active {
-  color: tomato;
+#gnavi-links li a.active span {
+  text-decoration: underline;
 }

@@ -13,7 +13,7 @@ import { RouterModule } from "@angular/router";
     StoreModule.forRoot({}),
     MainModule,
     RouterModule.forRoot([
-      { path: "register", loadChildren: "./user/user.module#UserModule" }
+      { path: "users", loadChildren: "./user/user.module#UserModule" }
     ])
   ],
   providers: [],
