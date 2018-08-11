@@ -5,6 +5,7 @@ import { AppComponent } from "./app.component";
 import { MainModule } from "./main/main.module";
 import { StoreModule } from "@ngrx/store";
 import { RouterModule } from "@angular/router";
+import { CoreModule } from "./core/core.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +15,8 @@ import { RouterModule } from "@angular/router";
     MainModule,
     RouterModule.forRoot([
       { path: "users", loadChildren: "./user/user.module#UserModule" }
-    ])
+    ]),
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,7 @@ import {
   MatTableModule
 } from "@angular/material";
 import { UserListComponent } from "./user-list/user-list.component";
+import { UserService } from "./user.service";
 //import { REACTIVE_FORM_DIRECTIVES } from "@angular/forms";
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { UserListComponent } from "./user-list/user-list.component";
       { path: "", component: UserListComponent }
     ])
   ],
-  declarations: [UserComponent, UserListComponent]
+  declarations: [UserComponent, UserListComponent],
+  providers: [UserService]
 })
 export class UserModule {}
