@@ -10,6 +10,8 @@ import {
 } from "@angular/material";
 import { UserListComponent } from "./user-list/user-list.component";
 import { UserService } from "./user.service";
+import { LoginComponent } from "./login/login.component";
+import { LoginModule } from "./login/login.module";
 //import { REACTIVE_FORM_DIRECTIVES } from "@angular/forms";
 @NgModule({
   imports: [
@@ -19,8 +21,10 @@ import { UserService } from "./user.service";
     MatButtonModule,
     MatInputModule,
     MatTableModule,
+    LoginModule,
     RouterModule.forChild([
       { path: "register", component: UserComponent },
+      { path: "login", component: LoginComponent },
       { path: "", component: UserListComponent }
     ])
   ],

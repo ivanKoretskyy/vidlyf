@@ -1,0 +1,11 @@
+<div>
+  <form [formGroup]="loginForm" class="login-form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="login-full-width">
+      <input matInput placeholder="Email" formControlName="email" type="email">
+    </mat-form-field>
+    <mat-form-field class="login-full-width">
+      <input matInput placeholder="Password" formControlName="password" type="password">
+    </mat-form-field>
+    <button mat-raised-button type="submit" [disabled]="!loginForm.valid">Login</button>
+  </form>
+</div>
