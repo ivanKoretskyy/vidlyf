@@ -18,6 +18,10 @@ import { CoreModule } from "./core/core.module";
       {
         path: "contacts",
         loadChildren: "./contact/contact.module#ContactModule"
+      },
+      {
+        path: "grid",
+        loadChildren: "./grid/grid.module#GridModule"
       }
     ]),
     CoreModule
