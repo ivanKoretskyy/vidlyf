@@ -80,3 +80,7 @@ a.hover-line > span {
 #gnavi-links li a.active span {
   text-decoration: underline;
 }
+a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

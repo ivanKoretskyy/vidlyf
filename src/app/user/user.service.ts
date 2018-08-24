@@ -20,6 +20,13 @@ export class UserService {
       }
     ]);
   }
+  createUser(user) {
+    return this.apiService.post(
+      "https://vidlyapi.herokuapp.com/api/users",
+      user
+    );
+  }
+
   getUsers2() {
     return this.apiService.get("https://vidlyapi.herokuapp.com/api/users");
   }

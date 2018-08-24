@@ -7,6 +7,8 @@ import {
   Validators,
   FormArray
 } from "@angular/forms";
+
+import { UserService } from "./user.service";
 @Component({
   selector: "app-user",
   templateUrl: "./user.component.html",
@@ -15,7 +17,7 @@ import {
 export class UserComponent implements OnInit {
   profileForm;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private userService: UserService) {}
 
   ngOnInit() {
     this.setProfileForm();
@@ -23,14 +25,14 @@ export class UserComponent implements OnInit {
   setProfileForm() {
     this.profileForm = this.fb.group({
       firstName: ["", Validators.required],
-      lastName: [""],
+      lastName: ["", Validators.required],
       address: this.fb.group({
         street: [""],
         city: [""],
         state: [""],
         zip: [""]
       }),
-      phones: this.fb.array([this.fb.control("192")])
+      phones: this.fb.array([this.fb.control(""), this.fb.control("")])
     });
   }
   get phones() {
@@ -42,7 +44,9 @@ export class UserComponent implements OnInit {
 
   onSubmit() {
     // TODO: Use EventEmitter with form value
-    console.warn(this.profileForm.value);
+    this.userService
+      .createUser(this.profileForm.value)
+      .subscribe(res => alert("success"));
   }
   updateProfile() {
     this.profileForm.patchValue({

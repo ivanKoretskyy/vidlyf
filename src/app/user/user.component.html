@@ -1,32 +1,32 @@
 <form [formGroup]="profileForm" class="example-form" (ngSubmit)="onSubmit()">
 
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="First Name" type="text" formControlName="firstName" required>
+    <input matInput placeholder="First Name" type="text" formControlName="firstName">
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="lastName Name" type="text" formControlName="lastName" required>
+    <input matInput placeholder="lastName Name" type="text" formControlName="lastName">
   </mat-form-field>
 
   <div formGroupName="address">
     <p>Address</p>
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Street" type="text" formControlName="street" required>
+      <input matInput placeholder="Street" type="text" formControlName="street">
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="City" type="text" formControlName="city" required>
+      <input matInput placeholder="City" type="text" formControlName="city">
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="State" type="text" formControlName="state" required>
+      <input matInput placeholder="State" type="text" formControlName="state">
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="zip" type="text" formControlName="zip" required>
+      <input matInput placeholder="zip" type="text" formControlName="zip">
     </mat-form-field>
   </div>
   <div formArrayName="phones">
     <button mat-button (click)="addPhone()">Add phone</button>
     <div *ngFor="let phone of phones.controls; let i=index">
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="phone" type="text" [formControlName]="i" required>
+        <input matInput placeholder="phone" type="text" [formControlName]="i">
       </mat-form-field>
     </div>
   </div>

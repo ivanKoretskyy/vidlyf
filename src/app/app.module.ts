@@ -14,7 +14,11 @@ import { CoreModule } from "./core/core.module";
     StoreModule.forRoot({}),
     MainModule,
     RouterModule.forRoot([
-      { path: "users", loadChildren: "./user/user.module#UserModule" }
+      { path: "users", loadChildren: "./user/user.module#UserModule" },
+      {
+        path: "contacts",
+        loadChildren: "./contact/contact.module#ContactModule"
+      }
     ]),
     CoreModule
   ],
