@@ -3,9 +3,10 @@
   <mat-form-field class="example-full-width">
     <input matInput placeholder="First Name" type="text" formControlName="firstName">
   </mat-form-field>
-  <mat-form-field class="example-full-width">
+  <!-- <mat-form-field class="example-full-width">
     <input matInput placeholder="lastName Name" type="text" formControlName="lastName">
-  </mat-form-field>
+  </mat-form-field> -->
+  <vidly-input [formControlName]="'lastName'" [form]="profileForm"></vidly-input>
 
   <div formGroupName="address">
     <p>Address</p>
@@ -30,9 +31,13 @@
       </mat-form-field>
     </div>
   </div>
+  
   <button mat-button type="submit" [disabled]="!profileForm.valid">Submit</button>
   <button mat-button (click)="updateProfile()">UpdateProfile</button>
 
 </form>
-<!-- <span> value: {{profileForm.value | json}}</span>
-<span> status: {{profileForm.status | json}}</span> -->
+
+<span> value: {{profileForm.value | json}}</span>
+<!-- <span> status: {{profileForm.status | json}}</span> -->
+
+<vidly-input  [(ngModel)]="somefield"></vidly-input>

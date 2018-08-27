@@ -16,6 +16,7 @@ import { UserService } from "./user.service";
 })
 export class UserComponent implements OnInit {
   profileForm;
+  somefield = 'tt';
 
   constructor(private fb: FormBuilder, private userService: UserService) {}
 
@@ -25,7 +26,7 @@ export class UserComponent implements OnInit {
   setProfileForm() {
     this.profileForm = this.fb.group({
       firstName: ["", Validators.required],
-      lastName: ["", Validators.required],
+      lastName: ["df", Validators.required],
       address: this.fb.group({
         street: [""],
         city: [""],

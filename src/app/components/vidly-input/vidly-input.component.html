@@ -1,0 +1,8 @@
+<input
+  type='text'
+  #input
+  required="required"
+  [value]="value"
+  name="formControlName"
+  [formControl]="control"
+  (ngModelChange)="updateModel($event)">
