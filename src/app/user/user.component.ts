@@ -27,6 +27,7 @@ export class UserComponent implements OnInit {
     this.profileForm = this.fb.group({
       firstName: ["", Validators.required],
       lastName: ["df", Validators.required],
+      agree: [true],
       address: this.fb.group({
         street: [""],
         city: [""],

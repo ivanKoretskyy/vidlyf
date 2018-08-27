@@ -7,7 +7,7 @@
     <input matInput placeholder="lastName Name" type="text" formControlName="lastName">
   </mat-form-field> -->
   <vidly-input [formControlName]="'lastName'" [form]="profileForm"></vidly-input>
-
+  <vidly-checkbox [formControlName]="'agree'"></vidly-checkbox>
   <div formGroupName="address">
     <p>Address</p>
     <mat-form-field class="example-full-width">

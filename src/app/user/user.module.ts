@@ -13,6 +13,7 @@ import { UserService } from "./user.service";
 import { LoginComponent } from "./login/login.component";
 import { LoginModule } from "./login/login.module";
 import { VidlyInputModule } from './../components/vidly-input/vidly-input.module';
+import { VidlyCheckboxModule } from './../components/vidly-checkbox/vidly-checkbox.module';
 //import { REACTIVE_FORM_DIRECTIVES } from "@angular/forms";
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { VidlyInputModule } from './../components/vidly-input/vidly-input.module
       { path: "login", component: LoginComponent },
       { path: "", component: UserListComponent }
     ]),
-    VidlyInputModule
+    VidlyInputModule,
+    VidlyCheckboxModule
   ],
   declarations: [UserComponent, UserListComponent],
   providers: [UserService]
