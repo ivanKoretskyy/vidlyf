@@ -13,9 +13,9 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   get(url, options = httpOptions) {
-    return this.http.get(url);
+    return this.http.get(url, options);
   }
-  post(url, payload) {
-    return this.http.post(url, payload);
+  post(url, payload, options? ) {
+    return this.http.post(url, payload, options);
   }
 }

@@ -69,6 +69,7 @@
     "menu main main main main main main"
     "footer footer footer footer footer footer footer";
   background-color: bisque;
+  grid-template-columns: auto auto auto auto auto auto auto;
   grid-gap: 1px;
 }
 .grid-container4 > div {

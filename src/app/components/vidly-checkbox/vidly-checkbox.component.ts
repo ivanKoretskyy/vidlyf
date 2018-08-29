@@ -1,20 +1,31 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ControlValueAccessor } from '@angular/forms';
+import { Component, OnInit, Input, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControlName, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'vidly-checkbox',
   templateUrl: './vidly-checkbox.component.html',
-  styleUrls: ['./vidly-checkbox.component.css']
+  styleUrls: ['./vidly-checkbox.component.css'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => VidlyCheckboxComponent),
+      multi: true
+    }
+  ]
 })
 export class VidlyCheckboxComponent implements OnInit, ControlValueAccessor {
-  @Input('value') _value = false;
-  get value() { return this._value; }
-  set value(value) { 
-    this._value = value;
-    this.onChange(value);
-    this.onTouched();
-  }
-  onChange: any = () => {};
+  _value = false;
+  @Input() FormControlName;
+  // get value() { return this._value; }
+  
+  @Input() value;
+  // set value(value) { 
+  //   this._value = value;
+  //   this.onChange(value);
+  //   this.onTouched();
+  // }
+  control = new FormControl(this.value);
+  onChange: any = (_) => {};
   onTouched: any = () => {};
 
   constructor() { }
@@ -23,7 +34,10 @@ export class VidlyCheckboxComponent implements OnInit, ControlValueAccessor {
   }
 
   writeValue(value) {
-    value && (this.value = value)
+  
+    this.value = !!value
+    this.onChange(this.value);
+    
   }
 
   registerOnChange(fn) {
@@ -35,7 +49,9 @@ export class VidlyCheckboxComponent implements OnInit, ControlValueAccessor {
   }
 
   toggle() {
-    this.value = !this.value
+    debugger;
+   // this.value = !this.value;
+    this.onChange(this.value);
   }
 
 
@@ -47,4 +63,7 @@ export class VidlyCheckboxComponent implements OnInit, ControlValueAccessor {
   // implement registerOnTouched funciton
   // create two properties onChange and onTouched
   // call onChange and on Touched in set vale setter
+  // import NG_VALUE_ACCESSOR
+  // provide ngValueAccessor in providers array
+  // import forvardRef from angular core needed to create 
 }

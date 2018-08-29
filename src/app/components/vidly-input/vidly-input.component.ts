@@ -25,8 +25,6 @@ export class VidlyInputComponent implements OnInit, ControlValueAccessor {
 
   set value(val) {
     this._value = val;
-    this.onChange(val);
-    this.onTouched();
   }
   constructor() { }
 

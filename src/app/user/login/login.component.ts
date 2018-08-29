@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { LoginService } from "./login.service";
 
+import { flatMap, tap, catchError, switchMap, concatMap } from 'rxjs/operators';
+
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -20,10 +22,12 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.loginService
-      .loginUser(this.loginForm.value)
+      .loginUser(this.loginForm.value).pipe(
+        tap(res => {  console.log('in tabp: ' + res)}),
+        flatMap((res) => { return this.loginService.getMe(res)})
+      )
       .subscribe(
-        res => console.log("login success"),
-        err => console.error(err)
+        res => { console.log('in subscribe: ' + res)}
       );
   }
 }
