@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Store } from "@ngrx/store";
+import { Store, select } from "@ngrx/store";
 
 @Component({
   selector: "vidly-navigation",
@@ -8,9 +8,17 @@ import { Store } from "@ngrx/store";
 })
 export class NavigationComponent implements OnInit {
   showDashboard = false;
+  currentUser;
   constructor(private store: Store<any>) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.store.pipe(select("users")).subscribe(state => {
+      if (state && state.currentUser) {
+        debugger;
+        this.currentUser = state.currentUser;
+      }
+    });
+  }
 
   toggleProjects() {
     this.showDashboard = !this.showDashboard;

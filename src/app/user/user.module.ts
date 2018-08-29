@@ -12,8 +12,10 @@ import { UserListComponent } from "./user-list/user-list.component";
 import { UserService } from "./user.service";
 import { LoginComponent } from "./login/login.component";
 import { LoginModule } from "./login/login.module";
-import { VidlyInputModule } from './../components/vidly-input/vidly-input.module';
-import { VidlyCheckboxModule } from './../components/vidly-checkbox/vidly-checkbox.module';
+import { VidlyInputModule } from "./../components/vidly-input/vidly-input.module";
+import { VidlyCheckboxModule } from "./../components/vidly-checkbox/vidly-checkbox.module";
+import { StoreModule } from "@ngrx/store";
+import { reducer } from "./state/user.reducer";
 //import { REACTIVE_FORM_DIRECTIVES } from "@angular/forms";
 @NgModule({
   imports: [
@@ -29,6 +31,7 @@ import { VidlyCheckboxModule } from './../components/vidly-checkbox/vidly-checkb
       { path: "login", component: LoginComponent },
       { path: "", component: UserListComponent }
     ]),
+    StoreModule.forFeature("users", reducer),
     VidlyInputModule,
     VidlyCheckboxModule
   ],

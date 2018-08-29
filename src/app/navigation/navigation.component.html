@@ -6,7 +6,7 @@
         <a mat-button (click)="toggleProjects()">PROJECTS</a>
       </div>
     </div>
-    
+
     <div id="gnavi" class="nav">
       <div class="nav-btn">
         <a mat-button>......</a>
@@ -15,6 +15,7 @@
 
     <div id="gnavi" class="nav">
       <div class="nav-btn">
+        <span *ngIf="currentUser">welcome {{currentUser.name}}</span>
         <a routerLink="/users/login" mat-button>LOGIN</a>
       </div>
     </div>
