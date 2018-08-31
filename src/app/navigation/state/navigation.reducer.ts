@@ -1,3 +1,7 @@
+export interface NavState {
+  showSideNav: boolean;
+}
+
 export function reducer(state, action) {
   switch (action.type) {
     case "TOGGLE_SIDENAV":
