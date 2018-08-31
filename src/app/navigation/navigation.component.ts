@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Store, select } from "@ngrx/store";
 import { filter, takeWhile } from "rxjs/operators";
+import * as fromUserState from "./../user/state/user.reducer";
 
 @Component({
   selector: "vidly-navigation",
@@ -11,7 +12,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
   showDashboard = false;
   currentUser;
   componentAlive = true;
-  constructor(private store: Store<any>) {}
+  constructor(private store: Store<fromUserState.State>) {}
 
   ngOnInit() {
     this.setCurrentUser();
@@ -25,7 +26,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
     this.store
       .pipe(
         select("users"),
-        filter(i => i),
+        filter(i => !!i),
         takeWhile(() => this.componentAlive)
       )
       .subscribe(state => {

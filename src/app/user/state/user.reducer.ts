@@ -2,17 +2,17 @@ import * as fromRootState from "./../../state/app.state";
 
 export interface UserState {
   currentUser: {
-    id: string;
+    _id: string;
     name: string;
     email: string;
   };
 }
 
 export interface State extends fromRootState.State {
-  userState: UserState;
+  users: UserState;
 }
 
-export function reducer(state, action) {
+export function reducer(state: UserState, action): UserState {
   switch (action.type) {
     case "CHANGE_CURRENT_USER":
       return {
