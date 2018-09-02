@@ -9,7 +9,7 @@ import * as fromUserState from "./../user/state/user.reducer";
   styleUrls: ["./navigation.component.css"]
 })
 export class NavigationComponent implements OnInit, OnDestroy {
-  showDashboard = false;
+  showDashboard = true;
   currentUser;
   componentAlive = true;
   constructor(private store: Store<fromUserState.State>) {}
@@ -25,13 +25,13 @@ export class NavigationComponent implements OnInit, OnDestroy {
   setCurrentUser() {
     this.store
       .pipe(
-        select("users"),
+        select(fromUserState.getCurrentUser),
         filter(i => !!i),
         takeWhile(() => this.componentAlive)
       )
       .subscribe(state => {
-        if (state && state.currentUser) {
-          this.currentUser = state.currentUser;
+        if (state) {
+          this.currentUser = state;
         }
       });
   }

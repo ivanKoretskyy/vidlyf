@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Store, select } from "@ngrx/store";
+import * as fromNavState from "./../navigation/state/navigation.reducer";
 
 @Component({
   selector: "vidly-main",
@@ -12,8 +13,8 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.store
-      .pipe(select("navigation"))
-      .subscribe(nav => (this.openSideNav = nav ? nav.showSideNav : false));
+      .pipe(select(fromNavState.getShowSideNav))
+      .subscribe(nav => (this.openSideNav = nav));
   }
 
   toggle() {
