@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
-import { LoginService } from "./login.service";
+import { LoginService } from "./../../core/login.service";
 
 import { flatMap, tap, catchError, switchMap, concatMap } from "rxjs/operators";
 import { Store } from "@ngrx/store";

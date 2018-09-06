@@ -8,6 +8,8 @@ import { RouterModule } from "@angular/router";
 import { CoreModule } from "./core/core.module";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { environment } from "../environments/environment.prod";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { AuthInterceptorService } from "./core/auth-interceptor.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,7 +35,13 @@ import { environment } from "../environments/environment.prod";
     ]),
     CoreModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

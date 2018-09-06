@@ -26,7 +26,6 @@ export class UserListComponent implements OnInit, OnDestroy {
       .getUsers2()
       .pipe(takeWhile(() => this.alive))
       .subscribe((res: any) => {
-        debugger;
         this.dataSource = res;
       });
   }
