@@ -7,8 +7,8 @@
     <input matInput placeholder="lastName Name" type="text" formControlName="lastName">
   </mat-form-field> -->
   <vidly-input [formControlName]="'lastName'" [form]="profileForm"></vidly-input>
-  <vidly-checkbox formControlName="agree"></vidly-checkbox>
- 
+  <vidly-checkbox [control]="profileForm.get('agree')" [form]="profileForm" formControlName="agree"></vidly-checkbox>
+
   <div formGroupName="address">
     <p>Address</p>
     <mat-form-field class="example-full-width">
@@ -32,7 +32,7 @@
       </mat-form-field>
     </div>
   </div>
-  
+
   <button mat-button type="submit" [disabled]="!profileForm.valid">Submit</button>
   <button mat-button (click)="updateProfile()">UpdateProfile</button>
 
@@ -41,7 +41,7 @@
 <span> value: {{profileForm.value | json}}</span>
 <!-- <span> status: {{profileForm.status | json}}</span> -->
 
-<vidly-input  [(ngModel)]="somefield"></vidly-input>
+<vidly-input [(ngModel)]="somefield"></vidly-input>
 
-<vidly-checkbox [(ngModel)]="someBool"></vidly-checkbox>
+<vidly-checkbox [(ngModel)]="someBool" (ngModelChange)="checkedChanges($event)"></vidly-checkbox>
 <span>{{someBool}}</span>

@@ -16,8 +16,8 @@ import { UserService } from "./user.service";
 })
 export class UserComponent implements OnInit {
   profileForm;
-  somefield = 'tt';
-  someBool = false;
+  somefield = "tt";
+  someBool = true;
 
   constructor(private fb: FormBuilder, private userService: UserService) {}
 
@@ -58,5 +58,8 @@ export class UserComponent implements OnInit {
         street: "zhovkivska"
       }
     });
+  }
+  checkedChanges(event) {
+    console.log(event);
   }
 }
