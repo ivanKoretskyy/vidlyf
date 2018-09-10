@@ -16,6 +16,7 @@ import { VidlyInputModule } from "./../components/vidly-input/vidly-input.module
 import { VidlyCheckboxModule } from "./../components/vidly-checkbox/vidly-checkbox.module";
 import { StoreModule } from "@ngrx/store";
 import { reducer } from "./state/user.reducer";
+import { SharedModule } from "./../components/shared.module";
 //import { REACTIVE_FORM_DIRECTIVES } from "@angular/forms";
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { reducer } from "./state/user.reducer";
     ]),
     StoreModule.forFeature("users", reducer),
     VidlyInputModule,
-    VidlyCheckboxModule
+    VidlyCheckboxModule,
+    SharedModule
   ],
   declarations: [UserComponent, UserListComponent],
   providers: [UserService]

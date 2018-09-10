@@ -18,17 +18,20 @@ export class UserComponent implements OnInit {
   profileForm;
   somefield = "tt";
   someBool = true;
+  rating = 4;
 
   constructor(private fb: FormBuilder, private userService: UserService) {}
 
   ngOnInit() {
     this.setProfileForm();
+    this.profileForm.get("starts").disable();
   }
   setProfileForm() {
     this.profileForm = this.fb.group({
       firstName: ["", Validators.required],
       lastName: ["df", Validators.required],
       agree: [false],
+      starts: [2],
       address: this.fb.group({
         street: [""],
         city: [""],
@@ -61,5 +64,8 @@ export class UserComponent implements OnInit {
   }
   checkedChanges(event) {
     console.log(event);
+  }
+  ratingChanged(rating) {
+    console.log(rating);
   }
 }

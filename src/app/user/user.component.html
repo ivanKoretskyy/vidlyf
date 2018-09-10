@@ -8,7 +8,7 @@
   </mat-form-field> -->
   <vidly-input [formControlName]="'lastName'" [form]="profileForm"></vidly-input>
   <vidly-checkbox [control]="profileForm.get('agree')" [form]="profileForm" formControlName="agree"></vidly-checkbox>
-
+  <vidlyf-rating formControlName="starts"></vidlyf-rating>
   <div formGroupName="address">
     <p>Address</p>
     <mat-form-field class="example-full-width">
@@ -45,3 +45,5 @@
 
 <vidly-checkbox [(ngModel)]="someBool" (ngModelChange)="checkedChanges($event)"></vidly-checkbox>
 <span>{{someBool}}</span>
+<div>{{rating}}</div>
+<vidlyf-rating [(ngModel)]="rating" [disabled]="someBool"></vidlyf-rating>
