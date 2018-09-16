@@ -17,6 +17,7 @@ import { VidlyCheckboxModule } from "./../components/vidly-checkbox/vidly-checkb
 import { StoreModule } from "@ngrx/store";
 import { reducer } from "./state/user.reducer";
 import { SharedModule } from "./../components/shared.module";
+import { UserResolver } from "./users.resolver";
 //import { REACTIVE_FORM_DIRECTIVES } from "@angular/forms";
 @NgModule({
   imports: [
@@ -30,7 +31,11 @@ import { SharedModule } from "./../components/shared.module";
     RouterModule.forChild([
       { path: "register", component: UserComponent },
       { path: "login", component: LoginComponent },
-      { path: "", component: UserListComponent }
+      {
+        path: "",
+        component: UserListComponent,
+        resolve: { users: UserResolver }
+      }
     ]),
     StoreModule.forFeature("users", reducer),
     VidlyInputModule,
@@ -38,6 +43,6 @@ import { SharedModule } from "./../components/shared.module";
     SharedModule
   ],
   declarations: [UserComponent, UserListComponent],
-  providers: [UserService]
+  providers: [UserService, UserResolver]
 })
 export class UserModule {}

@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, Inject } from "@angular/core";
+import { GOOGLE_TOKEN } from "./google.service";
 
-declare let google: any;
+//declare let google: any;
 @Component({
   selector: "app-contact",
   templateUrl: "./contact.component.html",
@@ -10,15 +11,15 @@ export class ContactComponent implements OnInit {
   @ViewChild("googlemap")
   googleMapElement: any;
   map: any;
-  constructor() {}
+  constructor(@Inject(GOOGLE_TOKEN) private google: any) {}
 
   ngOnInit() {
     var mapProp = {
-      center: new google.maps.LatLng(41.5793, 13.8143),
+      center: new this.google.maps.LatLng(41.5793, 13.8143),
       zoom: 14,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: this.google.maps.MapTypeId.ROADMAP
     };
-    this.map = new google.maps.Map(
+    this.map = new this.google.maps.Map(
       this.googleMapElement.nativeElement,
       mapProp
     );
