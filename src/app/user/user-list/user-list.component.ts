@@ -26,12 +26,6 @@ export class UserListComponent implements OnInit, OnDestroy {
   }
 
   getDataSourse() {
-    // this.userService
-    //   .getUsers2()
-    //   .pipe(takeWhile(() => this.alive))
-    //   .subscribe((res: any) => {
-    //     this.dataSource = res;
-    //   });
     this.dataSource = this.route.snapshot.data["users"];
   }
 }
