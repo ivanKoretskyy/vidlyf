@@ -31,6 +31,10 @@ import { AuthInterceptorService } from "./core/auth-interceptor.service";
       {
         path: "grid",
         loadChildren: "./grid/grid.module#GridModule"
+      },
+      {
+        path: "play",
+        loadChildren: "./play/play.module#PlayModule"
       }
     ]),
     CoreModule

@@ -1,0 +1,21 @@
+<ng-container [ngSwitch]="option">
+  <div [class.green]="option === 'a'">
+    <h3>ngSwitch example</h3>
+    <span *ngSwitchCase="'a'">A</span>
+    <span *ngSwitchCase="'b'">B</span>
+    <span *ngSwitchCase="'c'">C</span>
+    <span *ngSwithcDefault>default content</span>
+  </div>
+</ng-container>
+
+<div>
+  <h3>ngClass example</h3>
+  <span [ngClass]="{'bold': isMagor, 'red': isDanger}">A</span>
+  <span>B</span>
+  <span>C</span>
+</div>
+
+<div>
+  <h3>ngStyle example</h3>
+  <span [ngStyle]="getStyle()">AAA</span>
+</div>
