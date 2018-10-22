@@ -19,3 +19,9 @@
   <h3>ngStyle example</h3>
   <span [ngStyle]="getStyle()">AAA</span>
 </div>
+
+<div id="fileUpdload">
+  <h3>File upload</h3>
+  <input type="file" (change)="fileSelected($event)">
+  <button (click)="uploadFile()">Upload</button>
+</div>
